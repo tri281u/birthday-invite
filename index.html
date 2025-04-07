@@ -129,6 +129,15 @@
       bubble.style.animationDuration = (6 + Math.random() * 4) + 's';
       document.body.appendChild(bubble);
     }
+
+    // Hàm xác nhận tham gia
+    function confirmAttendance() {
+      let guestName = prompt("Xin vui lòng nhập tên của bạn để xác nhận tham dự!");
+      if (guestName) {
+        document.getElementById('thanks').style.display = 'block';
+        document.getElementById('attendees').innerHTML = "Danh sách tham gia: " + guestName;
+      }
+    }
   </script>
 
   <!-- Băng rôn -->
@@ -136,21 +145,17 @@
 
   <!-- Thiệp -->
   <div class="card">
-    <!-- Thay thế đường dẫn ảnh ở đây -->
     <img src="https://i.imgur.com/2kZ11MU.jpeg" alt="Ảnh dễ thương">
     <h1>🎂 Thiệp Mời Sinh Nhật 🎂</h1>
-    <div class="guest-name">Kính mời: <span>_Huy_</span></div>
+    <div class="guest-name">Kính mời: <span>______</span></div>
     <p>Vào lúc <strong>5 giờ chiều, Thứ 4 ngày 9/4/2025</strong></p>
     <p>Địa điểm: <strong>nhà Trí</strong></p>
     <p>Rất mong bạn đến chung vui! 🥳</p>
     
     <!-- Nút xác nhận -->
-    <button class="button" onclick="document.getElementById('thanks').style.display='block'">
-      Tôi sẽ đến!
-    </button>
+    <button class="button" onclick="confirmAttendance()">Tôi sẽ đến!</button>
     <div id="thanks" class="thanks">💚 Cảm ơn bạn! Hẹn gặp tại bữa tiệc nha! 💚</div>
+    <p id="attendees"></p> <!-- Hiển thị danh sách người tham gia -->
   </div>
 </body>
 </html>
-
-
